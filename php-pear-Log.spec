@@ -27,13 +27,11 @@ tak¿e mechanizm subject - observer.
 %setup -q -c
 
 %install
-cd %{_pearname}-%{version}
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
 
-install *.php			$RPM_BUILD_ROOT%{php_pear_dir}
-install %{_pearname}/*.php	$RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
+install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}
+install %{_pearname}-%{version}/%{_pearname}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
