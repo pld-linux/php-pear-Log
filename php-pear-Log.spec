@@ -1,10 +1,12 @@
 %include        /usr/lib/rpm/macros.php
 %define		_class		Log
+%define		_status		stable
+
 %define		_pearname	%{_class}
 Summary:	%{_pearname} - php pear logging utilities
 Summary(pl):	%{_pearname} - klasa z narzêdziami loguj±cymi
 Name:		php-pear-%{_pearname}
-Version:	1.5
+Version:	1.5.3
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
@@ -20,10 +22,14 @@ The Log framework provides an abstracted logging system. It supports
 logging to console, file, syslog, SQL, mail and mcal targets. It also
 provides a subject - observer mechanism.
 
+This class has in PEAR status: %{_status}
+
 %description -l pl
 Klasa Log daje abstrakcyjny system logowania. Obs³uguje logowanie do
 pliku, na konsolê, do sysloga, bazy SQL, poczt± oraz celów mcal. Dostarcza
 tak¿e mechanizm subject - observer.
+
+Ta klasa ma w PEAR status: %{_status}
 
 %prep
 %setup -q -c
