@@ -1,4 +1,4 @@
-%include        /usr/lib/rpm/macros.php
+%include	/usr/lib/rpm/macros.php
 %define		_class		Log
 %define		_status		stable
 %define		_pearname	%{_class}
