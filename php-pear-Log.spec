@@ -11,7 +11,7 @@ License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	7270284177e84806821e43faabe41075
-URL:		http://pear.php.net/package/%{_pearname}/
+URL:		http://pear.php.net/package/Log/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
 BuildArch:	noarch
@@ -39,7 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
 
 install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}
-install %{_pearname}-%{version}/%{_pearname}/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
+install %{_pearname}-%{version}/Log/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -48,4 +48,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %dir %{php_pear_dir}/%{_pearname}
 %{php_pear_dir}/*.php
-%{php_pear_dir}/%{_pearname}/*.php
+%{php_pear_dir}/Log/*.php
