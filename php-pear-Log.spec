@@ -1,3 +1,4 @@
+%include        /usr/lib/rpm/macros.php
 %define		_pearname	Log
 Summary:	Log - php pear logging utilities
 Summary(pl):	Klasa Log dla php pear z narzêdziami loguj±cymi
@@ -7,13 +8,10 @@ Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-Requires:	php-pear >= 4.2.0
-Requires:	php-zlib >= 4.2.0
+BuildRequires:	rpm-php-pearprov
 URL:		http://pear.php.net/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
-%define		peardir		%{_datadir}/pear
 
 %description
 The Log framework provides an abstracted logging system. It supports
@@ -32,16 +30,16 @@ Dostarcza tak¿e mechanizm subject - observer.
 cd %{_pearname}-%{version}
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{peardir}/%{_pearname}
+install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
 
-install *.php			$RPM_BUILD_ROOT%{peardir}
-install %{_pearname}/*.php	$RPM_BUILD_ROOT%{peardir}/%{_pearname}
+install *.php			$RPM_BUILD_ROOT%{php_pear_dir}
+install %{_pearname}/*.php	$RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%dir %{peardir}/%{_pearname}
-%{peardir}/*.php
-%{peardir}/%{_pearname}/*.php
+%dir %{php_pear_dir}/%{_pearname}
+%{php_pear_dir}/*.php
+%{php_pear_dir}/%{_pearname}/*.php
