@@ -5,12 +5,12 @@
 Summary:	%{_pearname} - php pear logging utilities
 Summary(pl):	%{_pearname} - klasa z narzêdziami loguj±cymi
 Name:		php-pear-%{_pearname}
-Version:	1.7.1
+Version:	1.8.0
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	7270284177e84806821e43faabe41075
+# Source0-md5:	fc2746dac4e6cf9cc225b3a67af4fdb5
 URL:		http://pear.php.net/package/Log/
 BuildRequires:	rpm-php-pearprov >= 4.0.2-98
 Requires:	php-pear
@@ -46,6 +46,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc %{_pearname}-%{version}/{docs,tests}
 %dir %{php_pear_dir}/%{_pearname}
 %{php_pear_dir}/*.php
 %{php_pear_dir}/Log/*.php
