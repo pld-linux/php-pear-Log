@@ -8,8 +8,8 @@ Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-BuildRequires:	rpm-php-pearprov
 URL:		http://pear.php.net/
+BuildRequires:	rpm-php-pearprov
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -19,9 +19,9 @@ logging to console, file, syslog, SQL, and mcal targets. It also
 provides a subject - observer mechanism.
 
 %description -l pl
-Klasa Log:: dostarcza abstrakcyjnej klasy loguj±cej systemu. Wspiera
-logowanie do pliku, na konsolê, sysloga, SQLa oraz celów mcal.
-Dostarcza tak¿e mechanizm subject - observer.
+Klasa Log daje abstrakcyjny system logowania. Obs³uguje logowanie do
+pliku, na konsolê, do sysloga, bazy SQL oraz celów mcal. Dostarcza
+tak¿e mechanizm subject - observer.
 
 %prep
 %setup -q -c
