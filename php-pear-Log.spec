@@ -1,8 +1,8 @@
 %include        /usr/lib/rpm/macros.php
 %define		_class		Log
 %define		_pearname	%{_class}
-Summary:	%{_class} - php pear logging utilities
-Summary(pl):	%{_class} - klasa z narzêdziami loguj±cymi
+Summary:	%{_pearname} - php pear logging utilities
+Summary(pl):	%{_pearname} - klasa z narzêdziami loguj±cymi
 Name:		php-pear-%{_pearname}
 Version:	1.2
 Release:	1
