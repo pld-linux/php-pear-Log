@@ -4,7 +4,7 @@
 Summary:	%{_pearname} - php pear logging utilities
 Summary(pl):	%{_pearname} - klasa z narzêdziami loguj±cymi
 Name:		php-pear-%{_pearname}
-Version:	1.2
+Version:	1.3
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
@@ -17,12 +17,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 The Log framework provides an abstracted logging system. It supports
-logging to console, file, syslog, SQL, and mcal targets. It also
+logging to console, file, syslog, SQL, mail and mcal targets. It also
 provides a subject - observer mechanism.
 
 %description -l pl
 Klasa Log daje abstrakcyjny system logowania. Obs³uguje logowanie do
-pliku, na konsolê, do sysloga, bazy SQL oraz celów mcal. Dostarcza
+pliku, na konsolê, do sysloga, bazy SQL, poczt± oraz celów mcal. Dostarcza
 tak¿e mechanizm subject - observer.
 
 %prep
