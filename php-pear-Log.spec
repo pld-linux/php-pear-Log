@@ -26,8 +26,8 @@ This class has in PEAR status: %{_status}
 
 %description -l pl
 Klasa Log daje abstrakcyjny system logowania. Obs³uguje logowanie do
-pliku, na konsolê, do sysloga, bazy SQL, poczt± oraz celów mcal. Dostarcza
-tak¿e mechanizm subject - observer.
+pliku, na konsolê, do sysloga, bazy SQL, poczt± oraz celów mcal.
+Dostarcza tak¿e mechanizm subject - observer.
 
 Ta klasa ma w PEAR status: %{_status}
 
