@@ -3,7 +3,7 @@
 %define		_status		stable
 %define		_pearname	%{_class}
 
-Summary:	%{_pearname} - php pear logging utilities
+Summary:	%{_pearname} - PHP PEAR logging utilities
 Summary(pl):	%{_pearname} - klasa z narzêdziami loguj±cymi
 Name:		php-pear-%{_pearname}
 Version:	1.8.6
