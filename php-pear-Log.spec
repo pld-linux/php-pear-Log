@@ -1,5 +1,5 @@
 %define		_pearname	Log
-Summary:	Log php pear logging utilities
+Summary:	Log - php pear logging utilities
 Summary(pl):	Klasa Log dla php pear z narzêdziami loguj±cymi
 Name:		php-pear-%{_pearname}
 Version:	1.1
@@ -26,9 +26,10 @@ logowanie do pliku, na konsolê, sysloga, SQLa oraz celów mcal.
 Dostarcza tak¿e mechanizm subject - observer.
 
 %prep
-%setup -q -n %{_pearname}-%{version}
+%setup -q -c
 
 %install
+cd %{_pearname}-%{version}
 rm -rf $RPM_BUILD_ROOT
 
 install -d $RPM_BUILD_ROOT%{peardir}/%{_pearname}
