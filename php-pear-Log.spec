@@ -7,8 +7,8 @@ Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-PreReq:		php-pear >= 4.2.0
-PreReq:		php-zlib >= 4.2.0
+Requires:	php-pear >= 4.2.0
+Requires:	php-zlib >= 4.2.0
 URL:		http://pear.php.net/
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,13 +36,6 @@ install -d $RPM_BUILD_ROOT%{peardir}/%{_pearname}
 
 install *.php			$RPM_BUILD_ROOT%{peardir}
 install %{_pearname}/*.php	$RPM_BUILD_ROOT%{peardir}/%{_pearname}
-install %{SOURCE0}		$RPM_BUILD_ROOT%{peardir}
-
-%post
-pear install %{peardir}/%{_pearname}-%{version}.tgz
-
-%postun
-pear uninstall %{_pearname}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -50,6 +43,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %dir %{peardir}/%{_pearname}
-%{peardir}/%{_pearname}-%{version}.tgz
-%ghost %{peardir}/*.php
-%ghost %{peardir}/%{_pearname}/*.php
+%{peardir}/*.php
+%{peardir}/%{_pearname}/*.php
