@@ -4,7 +4,7 @@
 Summary:	%{_pearname} - php pear logging utilities
 Summary(pl):	%{_pearname} - klasa z narzêdziami loguj±cymi
 Name:		php-pear-%{_pearname}
-Version:	1.3
+Version:	1.4
 Release:	1
 License:	PHP 2.02
 Group:		Development/Languages/PHP
