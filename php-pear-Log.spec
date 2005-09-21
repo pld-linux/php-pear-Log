@@ -7,16 +7,19 @@ Summary:	%{_pearname} - PHP PEAR logging utilities
 Summary(pl):	%{_pearname} - klasa z narzêdziami loguj±cymi
 Name:		php-pear-%{_pearname}
 Version:	1.8.7
-Release:	1
+Release:	1.2
 License:	PHP 2.02
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	b62df8970d3050291997f95dd5a887b2
 URL:		http://pear.php.net/package/Log/
-BuildRequires:	rpm-php-pearprov >= 4.0.2-98
+BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+# exclude optional dependencies
+%define		_noautoreq	'pear(DB.*)'
 
 %description
 The Log framework provides an abstracted logging system. It supports
@@ -32,22 +35,45 @@ Dostarcza tak¿e mechanizm subject - observer.
 
 Ta klasa ma w PEAR status: %{_status}.
 
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Summary(pl):	Testy dla PEAR::%{_pearname}
+Group:		Development
+Requires:	%{name} = %{version}-%{release}
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
+%description tests -l pl
+Testy dla PEAR::%{_pearname}.
+
 %prep
-%setup -q -c
+%pear_package_setup
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
+install -d $RPM_BUILD_ROOT%{php_pear_dir}
+%pear_package_install
 
-install %{_pearname}-%{version}/*.php $RPM_BUILD_ROOT%{php_pear_dir}
-install %{_pearname}-%{version}/Log/*.php $RPM_BUILD_ROOT%{php_pear_dir}/%{_pearname}
+%post
+if [ -f %{_docdir}/%{name}-%{version}/optional-packages.txt ]; then
+	cat %{_docdir}/%{name}-%{version}/optional-packages.txt
+fi
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc %{_pearname}-%{version}/{docs,tests}
+%doc install.log optional-packages.txt
+%doc docs/%{_pearname}/docs/*
+%{php_pear_dir}/.registry/*.reg
 %dir %{php_pear_dir}/%{_pearname}
 %{php_pear_dir}/*.php
 %{php_pear_dir}/Log/*.php
+
+%{php_pear_dir}/data/%{_pearname}
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/tests/*
