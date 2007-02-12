@@ -4,7 +4,7 @@
 %define		_pearname	%{_class}
 
 Summary:	%{_pearname} - PHP PEAR logging utilities
-Summary(pl):	%{_pearname} - klasa z narzêdziami loguj±cymi
+Summary(pl.UTF-8):   %{_pearname} - klasa z narzÄ™dziami logujÄ…cymi
 Name:		php-pear-%{_pearname}
 Version:	1.9.9
 Release:	1
@@ -32,16 +32,16 @@ provides a subject - observer mechanism.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
-Klasa Log daje abstrakcyjny system logowania. Obs³uguje logowanie do
-pliku, na konsolê, do sysloga, bazy SQL, poczt± oraz celów mcal.
-Dostarcza tak¿e mechanizm subject - observer.
+%description -l pl.UTF-8
+Klasa Log daje abstrakcyjny system logowania. ObsÅ‚uguje logowanie do
+pliku, na konsolÄ™, do sysloga, bazy SQL, pocztÄ… oraz celÃ³w mcal.
+Dostarcza takÅ¼e mechanizm subject - observer.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -50,7 +50,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
