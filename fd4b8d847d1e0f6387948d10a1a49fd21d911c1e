@@ -1,0 +1,2 @@
+- changed instalation in pre/post - causes existing modules in pear
+  database. Not nice but working solution... who knows better?
