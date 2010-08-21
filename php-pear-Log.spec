@@ -2,13 +2,11 @@
 %define		_class		Log
 %define		_status		stable
 %define		_pearname	%{_class}
-
 Summary:	%{_pearname} - PHP PEAR logging utilities
 Summary(pl.UTF-8):	%{_pearname} - klasa z narzędziami logującymi
 Name:		php-pear-%{_pearname}
 Version:	1.12.1
-Release:	1
-Epoch:		0
+Release:	2
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
@@ -19,11 +17,15 @@ BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
 Requires:	php-common >= 3:4.3.0
 Requires:	php-pear
+Suggests:	php-pear-DB
+Suggests:	php-pear-MDB2
+Suggests:	php-pear-Mail
+Suggests:	php-sqlite
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	'pear(DB.*)' 'pear(MDB2.*)'
+%define		_noautoreq	'pear(DB.*)' 'pear(MDB2.*)' pear(Mail.*)
 
 %description
 The Log framework provides an abstracted logging system. It supports
@@ -43,7 +45,7 @@ Ta klasa ma w PEAR status: %{_status}.
 Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
-Requires:	%{name} = %{epoch}:%{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
 AutoProv:	no
 AutoReq:	no
 
