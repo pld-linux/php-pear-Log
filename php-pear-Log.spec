@@ -1,16 +1,15 @@
 %include	/usr/lib/rpm/macros.php
-%define		_class		Log
 %define		_status		stable
-%define		_pearname	%{_class}
+%define		_pearname	Log
 Summary:	%{_pearname} - PHP PEAR logging utilities
 Summary(pl.UTF-8):	%{_pearname} - klasa z narzędziami logującymi
 Name:		php-pear-%{_pearname}
-Version:	1.12.3
+Version:	1.12.5
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	9930cb6d52b3af2ca6a24db267e237f0
+# Source0-md5:	1dd1346dfce2bb878bd9b27804b863ad
 URL:		http://pear.php.net/package/Log/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -26,7 +25,7 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	'pear(DB.*)' 'pear(MDB2.*)' pear(Mail.*)
+%define		_noautoreq	pear(DB.*) pear(MDB2.*) pear(Mail.*)
 
 %description
 The Log framework provides an abstracted logging system. It supports
