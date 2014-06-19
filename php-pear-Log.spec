@@ -1,31 +1,31 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		stable
-%define		_pearname	Log
-Summary:	%{_pearname} - PHP PEAR logging utilities
-Summary(pl.UTF-8):	%{_pearname} - klasa z narzędziami logującymi
-Name:		php-pear-%{_pearname}
+%define		pearname	Log
+%include	/usr/lib/rpm/macros.php
+Summary:	%{pearname} - PHP PEAR logging utilities
+Summary(pl.UTF-8):	%{pearname} - klasa z narzędziami logującymi
+Name:		php-pear-%{pearname}
 Version:	1.12.7
 Release:	2
 License:	MIT
 Group:		Development/Languages/PHP
-Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
+Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
 # Source0-md5:	8594a3d89eac997f072fa088b1eddc42
 URL:		http://pear.php.net/package/Log/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
-BuildRequires:	rpmbuild(macros) >= 1.300
+BuildRequires:	rpmbuild(macros) >= 1.654
 Requires:	php(core) >= 4.3.0
 Requires:	php-pear
+Suggests:	php(sqlite)
 Suggests:	php-pear-DB
 Suggests:	php-pear-MDB2
 Suggests:	php-pear-Mail
-Suggests:	php-sqlite
 Obsoletes:	php-pear-Log-tests
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # exclude optional dependencies
-%define		_noautoreq	pear(DB.*) pear(MDB2.*) pear(Mail.*)
+%define		_noautoreq_pear DB.* MDB2.* Mail.*
 
 %description
 The Log framework provides an abstracted logging system. It supports
@@ -60,9 +60,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc install.log optional-packages.txt
-%doc docs/%{_pearname}/docs/*
+%doc docs/%{pearname}/docs/*
 %{php_pear_dir}/.registry/*.reg
-%dir %{php_pear_dir}/%{_pearname}
+%dir %{php_pear_dir}/%{pearname}
 %{php_pear_dir}/*.php
 %{php_pear_dir}/Log/*.php
-%{php_pear_dir}/data/%{_pearname}
+%{php_pear_dir}/data/%{pearname}
