@@ -4,12 +4,12 @@
 Summary:	%{pearname} - PHP PEAR logging utilities
 Summary(pl.UTF-8):	%{pearname} - klasa z narzędziami logującymi
 Name:		php-pear-%{pearname}
-Version:	1.12.8
+Version:	1.12.9
 Release:	1
 License:	MIT
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{pearname}-%{version}.tgz
-# Source0-md5:	48782178b6fec704d62648d8f7ba0281
+# Source0-md5:	295512434d02805156f1184adc783307
 URL:		http://pear.php.net/package/Log/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
