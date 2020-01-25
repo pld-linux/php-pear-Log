@@ -1,6 +1,5 @@
 %define		status		stable
 %define		pearname	Log
-%include	/usr/lib/rpm/macros.php
 Summary:	%{pearname} - PHP PEAR logging utilities
 Summary(pl.UTF-8):	%{pearname} - klasa z narzędziami logującymi
 Name:		php-pear-%{pearname}
